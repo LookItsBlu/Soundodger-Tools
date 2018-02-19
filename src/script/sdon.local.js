@@ -85,6 +85,7 @@ export default {
             'pl': 'player',
         'offset0': 'its starting offset is',
         'offset1': 'its ending offset is',
+        'amount': 'the bullet amount is',
         'amount0': 'its starting amount is',
         'amount1': 'its ending amount is',
         'angle0': 'its starting angle is',
@@ -93,6 +94,6 @@ export default {
         'speed1': 'its ending speed is',
         'rows': 'this wave\'s row count is',
         'lifespan': 'this homing tracks the player for',
-        'duration': 'this has a duration of'
+        'duration': 'this stream\'s duration is'
     }
 }
