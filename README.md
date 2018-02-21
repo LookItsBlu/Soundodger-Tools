@@ -1,4 +1,4 @@
-# Soundodger Tools 2 Alpha 2
+# Soundodger Tools 2 Beta 1
 
 > A list of tools made to help soundodger level creators, made using Vue.JS
 
