@@ -35,13 +35,14 @@ export default {
         // Initializes the values based on the uploaded xml
         init(data) {
             if(data[0] == 'xml') {
-                this.xml = data[1];
+                this.xml = data[3];
                 this.json = this.x2js.xml_str2json(this.xml);
+                this.sdon = new sdon(data[3], data[1], false, this.json);
                 this.makeSDON();
             }
             else if(data[0] == 'sdon') {
-                this.sdon = data[1];
-                this.json = sdon.translateSDON(this.sdon);
+                this.sdon = new sdon(data[2], data[1], true, data[3]);
+                this.json = this.sdon.translateSDON();
                 this.makeXML();
             }
         },
@@ -51,7 +52,7 @@ export default {
         },
         // Creates an easily readable file from the JSON data
         makeSDON() {
-            this.sdon = sdon.createSDON(JSON.stringify(this.json, null, 2));
+            this.sdon.updateContent(this.json);
         },
         // Applies the changes made to the level across all files
         updateLevel() {
