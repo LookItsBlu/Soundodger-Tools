@@ -2,17 +2,18 @@
     <div class='upload'>
         <label>xml / sdon file: </label>
         <input type='file' name='level-import' accept='.xml, .sdon' @change='getFile($event)'>
-        <br />
-        <div class="level-download" v-if='filename'>
-            <span>Download as:</span>
-            <button type='button' v-if='xml' @click="downloadFile('xml')">XML</button>
-            <button type='button' v-if='sdon' @click="downloadFile('sdon')">SDON</button>
-        </div>
+
         <div class='sdon-format-select'>
             <span>SDON file format:</span>
             <select v-model="selected_format">
                 <option v-for="format in sdon_formats">{{ format }}</option>
             </select>
+        </div>
+        <br />
+        <div class="level-download" v-if='filename'>
+            <span>Download as:</span>
+            <button type='button' v-if='xml' @click="downloadFile('xml')">XML</button>
+            <button type='button' v-if='sdon' @click="downloadFile('sdon')">SDON</button>
         </div>
     </div>
 </template>

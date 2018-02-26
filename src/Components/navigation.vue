@@ -1,12 +1,11 @@
 <template lang="html">
     <div>
         <h1>Soundodger Tools</h1>
+
         <ul>
-            <li><router-link to="/">index</router-link></li>
-            <li><router-link to="/shift">shift</router-link></li>
-            <li><router-link to="/enemyRandomizer">Enemy Randomizer</router-link></li>
-            <li><router-link to="/frameToBullet">Frame to Bullet</router-link></li>
-            <li><router-link to="/schemify">Schemify</router-link></li>
+            <li v-for='route in routes'>
+                <router-link :to="route.path">{{ route.name }}</router-link>
+            </li>
         </ul>
 
         <levelIO
@@ -18,12 +17,18 @@
 </template>
 
 <script>
+import routeList from '../Routes.js'
 import levelIO from './levelIO.vue'
 
 export default {
     props: ['xml', 'sdon'],
     components: {
         'levelIO': levelIO
+    },
+    data() {
+        return {
+            routes: routeList
+        }
     }
 }
 </script>

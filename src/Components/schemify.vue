@@ -33,7 +33,7 @@ export default {
         schemify() {
             var p = this;
 
-            axios.get('http://www.thecolorapi.com/scheme?hex='+p.mainColor.replace('#', '')+'&mode=quad&count=9&format=json')
+            axios.get('https://www.thecolorapi.com/scheme?hex='+p.mainColor.replace('#', '')+'&mode=quad&count=9&format=json')
             .then(resp=>{
                 p.suggestedColors = resp.data.colors.map((e)=>{return e.hex});
             });
